@@ -13,7 +13,7 @@ app.get("/allRooms",(req , res)=>{
 })
 app.get("/allRooms/:id",(req , res)=>{
     const id = req.params.id;
-    const selectedRoom = allRooms.find(room=>room.id === id);
+    const selectedRoom = allRooms.find(room=>room.id == id);
     res.send(selectedRoom);
 })
 app.listen(port,()=>{
