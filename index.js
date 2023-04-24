@@ -11,6 +11,11 @@ app.get("/",(req,res)=>{
 app.get("/allRooms",(req , res)=>{
     res.send(allRooms);
 })
+app.get("/allRooms/:id",(req , res)=>{
+    const id = req.params.id;
+    const selectedRoom = allRooms.find(room=>room.id === id);
+    res.send(selectedRoom);
+})
 app.listen(port,()=>{
     console.log(`This server listening at port: ${port}`);
 })
